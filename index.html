@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card | Coding Vibess</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <button class="mail">
+        <i class="fa-regular fa-envelope" onclick="showEmailPopup()"></i>
+      </button>
+      <div class="profile-pic">
+        <img src="sg.jpg" alt="" width="50" height="50" />
+      </div>
+      <div class="bottom">
+        <div class="content">
+          <span class="name">Gaurav Kumar Maurya</span>
+          <span class="about-me"
+            >I'm exploring new technologies and contributing to
+            open-source projects.
+          </span>
+        </div>
+        <div class="bottom-bottom">
+          <div class="social-links-container">
+            <i id="fa-facebook" class="fa-brands fa-facebook"></i>
+            <i id="fa-instagram" class="fa-brands fa-instagram"></i>
+            <i id="fa-twitter" class="fa-brands fa-twitter"></i>
+          </div>
+          <button class="button">Contact Me</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mail popup -->
+     <div id="email-popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <p>Email: gamurya200@gmail.com</p>
+  </div>
+</div>
+
+    <!-- javascript link -->
+    <!-- <script src="script.js"></script> -->
+    
+  </body>
+  <script>  
+    window.watsonAssistantChatOptions = {
+      integrationID: "d9170a62-6342-4da1-8d26-ceacc5cdc3c8", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "94c8653f-70d3-436d-a845-8467cdb0d369", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+
+    // javascript for twitter icon action
+    const twitterIcon = document.getElementById("fa-twitter");
+    twitterIcon.addEventListener("click", function() {
+      window.open("https://x.com/gm653984?t=orzn7nuDgydo9ARhb76ubQ&s=08", "_blank");
+    });
+    const instagram = document.getElementById("fa-instagram");
+    instagram.addEventListener("click", function() {
+      window.open("https://www.instagram.com/gmaurya933?igsh=MWJ5ZWNsOHM1c20xOQ==", "_blank");
+    });
+    const facebook = document.getElementById("fa-instagram");
+    facebook.addEventListener("click", function() {
+      window.open("", "_blank");
+    });
+
+    //for mail popup js
+     function showEmailPopup() {
+    document.getElementById("email-popup").classList.remove("hidden");
+  }
+
+  function closePopup() {
+    document.getElementById("email-popup").classList.add("hidden");
+  }
+
+  </script>
+</html>
+<!-- arvind.mishra@srmscet.edu// -->
